@@ -10,14 +10,47 @@ connection.connect();
 
 //write your query here to grab list of photos from database;
 
-function getPhotos(id, callback) {
+function getAllPhotos(callback) {
+	connection.query(`SELECT * FROM houses;`, function(err, results) {
+		if (err) {
+			console.log('err', err);
+		} else {
+			console.log('get all photos worked', results);
+			callback(results);
+		}
+	});
+}
+module.exports.getAllPhotos = getAllPhotos;
+
+
+
+function getPhotosById(id, callback) {
 	connection.query(`SELECT * FROM houses WHERE id = ${id};`, function(err, results){
 		if (err) {
 			console.log('error @ controller');
 			throw err;
 		} else {
-			console.log('results @ controller,' results);
+			console.log('results @ controller', results);
 			callback(results);
 		}
 	});
 }
+
+
+
+//simple seeding function
+// function seed() {
+// 	for(var idx = 1; idx <= 13; idx++){
+// 		connection.query(`INSERT INTO houses (id, photo_url) VALUES (
+// 				1,
+// 				'https://s3-us-west-1.amazonaws.com/photo-gallery1/1_photos/${idx}.jpg');`, function(err, results) {
+// 				if(err){
+// 					console.log('err in seed');
+// 					throw err;
+// 				} else {
+// 					console.log('seed working');
+// 				}
+// 			});
+// 	}
+// }
+// seed();
