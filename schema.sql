@@ -12,3 +12,17 @@ CREATE TABLE IF NOT EXISTS houses (
 -- 	photo_url varchar(255), 
 -- 	FOREIGN KEY (house_id) REFERENCES houses (id) 
 -- )
+
+-- INSERT INTO houses (
+-- 	id,
+-- 	photo_url
+
+-- ) VALUES (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- ();
