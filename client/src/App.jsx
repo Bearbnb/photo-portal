@@ -46,7 +46,7 @@ class App extends Component{
 	                <h1>michaelchi</h1>
 	        	<div className='cards-slider'>
 	        		<div className='cards-slider-wrapper'>
-	            		{cards.map(card => <Card key={card.id} card={card}) />}
+	            		{cards.map(card => <Card key={card.id} card={card} />)}
 	            	</div>
 	            </div>
 
