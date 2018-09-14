@@ -33,13 +33,13 @@ class App extends Component{
 	      <div className="App">
 	        <button 
 	          onClick={() => this.nextCard()} 
-	          disabled={property.id === data.properties.length-1}
+	          disabled={card.id === data.properties.length-1}
 	        >Next</button>
 
 
 	        <button 
 	          onClick={() => this.prevCard()} 
-	          disabled={property.id === 0}
+	          disabled={card.id === 0}
 	        >Prev</button>
 
 	        <div className="page">
