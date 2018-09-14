@@ -39,7 +39,7 @@ class App extends Component{
 
 	        <button 
 	          onClick={() => this.prevCard()} 
-	          disabled={card.id === 0}
+	          disabled={card.id === 1}
 	        >Prev</button>
 
 	        <div className="page">
