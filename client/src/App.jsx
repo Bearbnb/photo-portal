@@ -28,7 +28,7 @@ class App extends Component{
 	}
 
 	render() {
-		const {card} = this.state;
+		const {card, cards} = this.state;
 	    return (
 	      <div className="App">
 	        <button 
@@ -36,7 +36,7 @@ class App extends Component{
 	          disabled={property.id === data.properties.length-1}
 	        >Next</button>
 
-	        
+
 	        <button 
 	          onClick={() => this.prevCard()} 
 	          disabled={property.id === 0}
@@ -44,8 +44,11 @@ class App extends Component{
 
 	        <div className="page">
 	                <h1>michaelchi</h1>
-
-	            <Card card={card} />
+	        	<div className='cards-slider'>
+	        		<div className='cards-slider-wrapper'>
+	            		{cards.map(card => <Card key={card.id} card={card}) />}
+	            	</div>
+	            </div>
 
 	        </div>
 	      </div>
