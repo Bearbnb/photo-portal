@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
 	database: 'listings'
 });
 
-connection.connect();
+connection.connect(console.log('connected2db'));
 
 //write your query here to grab list of photos from database;
 
@@ -42,7 +42,7 @@ function getPhotosById(id, callback) {
 // function seed() {
 // 	for(var idx = 1; idx <= 13; idx++){
 // 		connection.query(`INSERT INTO houses (id, photo_url) VALUES (
-// 				1,
+// 				${idx},
 // 				'https://s3-us-west-1.amazonaws.com/photo-gallery1/1_photos/${idx}.jpg');`, function(err, results) {
 // 				if(err){
 // 					console.log('err in seed');
@@ -53,4 +53,4 @@ function getPhotosById(id, callback) {
 // 			});
 // 	}
 // }
-// seed();
+//  seed();
