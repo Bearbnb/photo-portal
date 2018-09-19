@@ -9,7 +9,7 @@ const path = require('path');
 //app.use("/", express.static('../client/dist'));
 
 //app.use('/', express.static(path.join(__dirname, '../client/dist')));
-app.use('/', express.static(path.join(__dirname, '../build')));
+app.use('/', express.static(path.join(__dirname, '../AppBuild/build')));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");

@@ -39,7 +39,7 @@ class Base extends Component {
       if (error) throw new Error(error);
 
       data.properties = JSON.parse(body);
-      this.setState({data: new_data})
+      //this.setState({data: new_data})
       console.log(data.properties[0].photo_url);
     });
 
