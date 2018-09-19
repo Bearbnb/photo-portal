@@ -15,7 +15,7 @@ function getAllPhotos(callback) {
 		if (err) {
 			console.log('err', err);
 		} else {
-			console.log('get all photos worked', results);
+			//console.log('get all photos worked', results);
 			callback(results);
 		}
 	});
@@ -40,9 +40,9 @@ function getPhotosById(id, callback) {
 
 //simple seeding function
 // function seed() {
-// 	for(var idx = 1; idx <= 13; idx++){
+// 	for(var idx = 1; idx <= 17; idx++){
 // 		connection.query(`INSERT INTO houses (id, photo_url) VALUES (
-// 				${idx},
+// 				${idx - 1},
 // 				'https://s3-us-west-1.amazonaws.com/photo-gallery1/1_photos/${idx}.jpg');`, function(err, results) {
 // 				if(err){
 // 					console.log('err in seed');
@@ -53,4 +53,4 @@ function getPhotosById(id, callback) {
 // 			});
 // 	}
 // }
-//  seed();
+// seed();
