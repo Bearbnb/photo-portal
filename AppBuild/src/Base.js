@@ -48,7 +48,7 @@ class Base extends Component {
   render() {
     return (
       <main class='main-div'>
-        <h1>BareBnB</h1>
+        
 
 
         <App show={this.state.show} data={this.state.data} handleClose={this.hideModal}/>
@@ -62,7 +62,7 @@ class Base extends Component {
 
 
 
-          <p>Page Content..</p>
+          
 
 
       </main>
