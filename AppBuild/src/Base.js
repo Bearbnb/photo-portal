@@ -9,7 +9,7 @@ import $ from 'jquery';
 import request from 'request';
 import data from './data/data';
 
-//var data = {properties: []}
+
 class Base extends Component {
   constructor(props){
     super(props);
@@ -27,23 +27,30 @@ class Base extends Component {
     this.setState({ show: false });
   };
 
-  // componentDidMount() {
-  //   var new_data = {properties: []};
-  //   var options = { method: 'GET',
-  //     url: 'http://localhost:3007/house',
-  //     headers: 
-  //      { 'Postman-Token': '74b159aa-6450-4cae-896c-a10335065000',
-  //        'Cache-Control': 'no-cache' } };
+  componentDidMount() {
+    const idPath = window.location.pathname;
+    const id = idPath.substring(1, idPath.length - 1);
+    this.setState({data: data})
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      //'url': 'http://localhouse:3007/house'
+      "url": `/photos/${id}`,
+      "method": "GET",
+      "headers": {
+        "Cache-Control": "no-cache",
+        "Postman-Token": "21422b57-759d-4710-83dc-565d97eae64f"
+      }
+    }
 
-  //   request(options, function (error, response, body) {
-  //     if (error) throw new Error(error);
+    $.ajax(settings).done(function (response) {
+      console.log('***', response);
+      var new_data = {properties: response};
+      this.setState({data: new_data})
+    });
 
-  //     data.properties = JSON.parse(body);
-  //     //this.setState({data: new_data})
-  //     console.log(data.properties[0].photo_url);
-  //   });
 
-  // }
+  }
 
   render() {
     return (
