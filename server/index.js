@@ -9,7 +9,20 @@ const path = require('path');
 //app.use("/", express.static('../client/dist'));
 
 //app.use('/', express.static(path.join(__dirname, '../client/dist')));
-app.use('/', express.static(path.join(__dirname, '../AppBuild/build')));
+
+
+//************
+//app.use(express.static(path.join(__dirname, '../AppBuild/build')));
+
+// app.get(function (req, res) {
+//   res.sendFile(path.join(__dirname, '../AppBuild/build'));
+// });
+
+
+// *********
+app.use('/:id', express.static(path.join(__dirname, '../AppBuild/build')));
+//app.use(express.static(path.join(__dirname, '../AppBuild/build')));
+
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
